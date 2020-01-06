@@ -1,0 +1,57 @@
+{
+	"name": "base62/base62",
+	"description": "base62 encoder and decoder also for big numbers with Laravel integration",
+	"keywords": [
+		"base62",
+		"Laravel",
+		"encoder",
+		"decoder",
+		"url",
+		"string",
+		"BigInteger"
+	],
+	"type": "library",
+	"version": "3.1.1",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Siro Diaz Palazon",
+			"email": "siro_diaz@yahoo.com"
+		}
+	],
+	"require": {
+		"php": ">=7.0.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~6.0",
+		"squizlabs/php_codesniffer": "3.*",
+		"orchestra/testbench": "^3.5"
+	},
+	"autoload": {
+		"psr-4": {
+			"Base62\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Base62\\Tests\\": "tests/"
+		}
+	},
+	"extra": {
+        "laravel": {
+            "providers": [
+                "Base62\\Base62ServiceProvider"
+            ]
+        }
+    },
+	"suggest": {
+        "ext-gmp": "This extension enables faster big integer encoding and decoding."
+    },
+	"support": {
+		"issues": "https://github.com/SiroDiaz/Base62/issues",
+		"source": "https://github.com/SiroDiaz/Base62"
+	},
+	"scripts": {
+		"test": "phpunit"
+	}
+}
