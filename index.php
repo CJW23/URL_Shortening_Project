@@ -4,17 +4,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="design.css">
 </head>
 <body>
-    <?php
-        if(isset($_SESSION['convertUrl'])){
-            echo "<a href='{$_SESSION['convertUrl']}'>{$_SESSION['convertUrl']}</a>";
-            unset($_SESSION['convertUrl']);
-        }
-    ?>
-    <form action="shortening.php" method="post">
-        <p><input type="text" name="input_url" placeholder="Enter URL" style="width:500px; height:30px; font-size:20px"></p>
-        <p><input type="submit"></p>
-    </form>
+    <form action=""></form>
+    <div class="container">
+        <div class="container__item">
+            <form action="shortening.php" method="post" class="form">
+                <input type="text" name="input_url" class="form__field" placeholder="Enter URL" />
+                <input type="submit" class="btn btn--primary btn--inside uppercase" />
+            </form>
+        </div>
+	
+        <div class="container__item container__item--bottom">
+            <?php
+                if(isset($_SESSION['convertUrl'])){
+                    echo "<p>URL is <a href='{$_SESSION['convertUrl']}'>{$_SESSION['convertUrl']}</a></p>";
+                    unset($_SESSION['convertUrl']);
+                }
+            ?>
+        </div>
+    </div>
+
 </body>
 </html>
